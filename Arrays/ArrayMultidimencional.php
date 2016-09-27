@@ -11,6 +11,7 @@ $proEdad=(19+19+18+19)/4;
 
 
 $fila1=["Juan","Perez","63","1,72","19"];
+
 $fila2=["Pedro","Gomez","65","1,68","19"];
 $fila3=["Maria","Diaz","56","1,56","18"];
 $fila4=["Ana","Jaramillo","54","1,65","19"];

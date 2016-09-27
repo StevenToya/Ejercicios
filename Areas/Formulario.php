@@ -21,12 +21,13 @@
 
 		}
 		form{
-			margin: 20% 0 5% 40%;
+			margin: 10% 0 5% 10%;
 		}
 		label{
 			display: block; 
-			margin-top: 5%;
+			padding: 5px;
 			color: white;
+			text-align: center;
 		}
 
 		input{
@@ -34,21 +35,63 @@
 			padding: 10px;
 			margin:5% 0 5% ;
 		}
+		h3{
+			margin:5% 0 0 25%;
+			color: white;
+		}
+		div{
+			margin: 15% 0 0 35%;
+			background: gray;
+			width: 30%;
+		}
+		input[type="submit"]{
+			margin-left: 46%;
+			margin-top: 1%;
+		}
 	</style>
+
 
 </head>
 <body>
 
-<form action="Controlador.php" method="POST">
-	<label>Elija la figura a consultar "Triangulo=1 Cuadrado=2"</label>
-	
-	<input type="number" name="figura">
-	<label >Ingresa la longitud del lado de tu figura</label>
-	<input type="number" name="Lado">
+	<h3>CONSULTA EL AREA Y EL PERIMETRO DE TU FIGURA GEOMETRICA</h3>
 
-	<input type="submit" value="Enviar">
+	<div>
+		<form name="formulario" action="Controlador.php" method="POST">
+			<label >Ingresa la longitud del lado </label>
 
-</form>
+			<input type="text" name="Lado">
+			<select name="figura">
+				<option value="1">Triangulo</option>
+				<option value="2">Cuadrado</option>
+
+			</select>
+			<br>
+		</div>
+		<input type="submit" value="Consultar">
+
+	</form>
+
+
+
+<script type="text/javascript">
+
+window.onload = function () {
+document.formulario.Lado.focus();
+document.formulario.addEventListener('submit', validarFormulario);
+}
+ 
+function validarFormulario(evObject) {
+evObject.preventDefault();
+var todoCorrecto = true;
+var formulario = document.formulario;
+if (isNaN(formulario.Lado.value)==true || /^[1-9]\d$/.test(formulario.Lado.value)==false )
+ {alert ('Longitud no valida'); todoCorrecto=false;}
+
+if (todoCorrecto ==true) {formulario.submit();}
+}
+</script>
 
 </body>
 </html>
+

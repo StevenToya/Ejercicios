@@ -10,18 +10,17 @@ class Cuadrado extends ClasePrincipal
 
 
 	function calcularArea($lados){
-     $suma = pow ($lados,2);
-     echo "El area del cuadrado es: ".$suma."<br>";
+		$area = pow($lados,2);
+		return $area;
 	}
 
 
 	function calcularPerimetro($lados){
 		$peri= $lados * 4;
-		echo "El perimetro del cuadrado es: ".$peri;
-
+		return $peri;
 	}
 	
 }
 
 
- ?>
+?>

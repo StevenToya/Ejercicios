@@ -3,32 +3,39 @@
 $lado=$_POST["Lado"];
 $opcion=$_POST["figura"];
 
-switch ($opcion) {
 
-	case 1:
-	require_once("ClaseTriangulo.php");
+
+
+if($opcion ==1)
+{
+	require_once("clases/ClaseTriangulo.php");
 	
 	$obj=new Triangulo;
 
-	$resultado=$obj ->calcularArea($lado);
-	$resultado1=$obj ->calcularPerimetro($lado);
+	$obj->setLado($lado);
+	// echo $obj->getLado();
+	$Area=$obj ->calcularArea();
+	// $Perimetro=$obj->calcularPerimetro();
 
-	echo $resultado;
-	echo $resultado1;
 
-	break;
 
-	case 2:
-	require_once("Clasecuadrado.php");
-	$obj = new Cuadrado;
-	$resultado = $obj->calcularArea($lado);
-	$resultado1=$obj->calcularPerimetro($lado);
-
-	echo $resultado;
-	echo $resultado1;
-	break;
-
+	echo "El area del triangulo es: ".$Area."<br>";
+	// echo "El perimetro del triangulo es: ".$Perimetro;
 }
+
+elseif($opcion==2){
+
+	require_once("clases/Clasecuadrado.php");
+
+	$obj = new Cuadrado;
+
+	$Area = $obj->calcularArea($lado);
+	$Perimetro=$obj->calcularPerimetro($lado);
+
+	echo "El area del cuadrado es: ".$Area."<br>";
+	echo "El perimetro del cuadrado es: ".$Perimetro;
+}
+
 
 
 

@@ -18,7 +18,7 @@ if($_GET["var"] == 1){
 		$respuesta = $datos->validar($correo,$contrasena);
 
 
-		if ($respuesta == true) {
+		if ($respuesta) {
 
 			session_start();
 

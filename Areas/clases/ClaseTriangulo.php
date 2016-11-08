@@ -2,7 +2,7 @@
 <?php 
 require_once("ClaseAbstracta.php"); 
 
-class Triangulo
+class Triangulo extends ClasePrincipal
 {
 
 	
@@ -24,12 +24,12 @@ class Triangulo
 
 	}
 
-	// function calcularPerimetro(){
+	function calcularPerimetro(){
 
-	// 	$peri=$this->lado*2;
-	// 	return $peri;
+		$peri=$this->lado*2;
+		return $peri;
 
-	// }
+	}
 
 }
 

@@ -3,7 +3,7 @@
 abstract class ClasePrincipal{
 
 
-abstract public function calculArea();
+abstract public function calcularArea();
 
 abstract public function calcularPerimetro();
 
